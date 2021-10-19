@@ -3,8 +3,12 @@ import { AuthenticateUserService } from "../services/AutheticateUserService";
 
 class AuthenticateUserController {
   async handle(request: Request, response: Response) {
+    const { code } = request.body;
+
     const service = new AuthenticateUserService();
-    //service.execute("asfasgsa");
+    const result = await service.execute(code);
+
+    return response.json(result);
   }
 }
 

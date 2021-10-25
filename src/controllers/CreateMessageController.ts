@@ -1,3 +1,5 @@
+//* chama serviço de criação de mensagem
+
 import { Request, Response } from "express";
 import { CreateMessageService } from "../services/CreateMessageService";
 import { io } from "../app";

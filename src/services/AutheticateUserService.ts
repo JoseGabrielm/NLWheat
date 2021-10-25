@@ -41,6 +41,7 @@ class AuthenticateUserService {
         },
       });
 
+    //* recupera token via axios na api do github
     const response = await axios.get<IUserResponse>(
       "https://api.github.com/user",
       {
@@ -49,6 +50,8 @@ class AuthenticateUserService {
         },
       }
     );
+
+    //* verifica se o usuário ja esta no BD, se não, cria o usuário no BD
 
     const { login, id, avatar_url, name } = response.data;
 
@@ -69,6 +72,7 @@ class AuthenticateUserService {
       });
     }
 
+    //* gera o token
     const token = sign(
       {
         user: {

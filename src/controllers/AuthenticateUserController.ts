@@ -1,3 +1,5 @@
+//* chama serviços de autenticação e faz um catch ´para retornar erros
+
 import { Request, Response } from "express";
 import { AuthenticateUserService } from "../services/AutheticateUserService";
 

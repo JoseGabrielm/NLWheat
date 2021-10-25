@@ -1,6 +1,9 @@
+//* lógica por trás da criação de mensagens
+
 import prismaClient from "../prisma";
 import { io } from "../app";
 class CreateMessageService {
+  // insere no BD a mensagem associada ao user_id
   async execute(text: string, user_id: string) {
     const message = await prismaClient.message.create({
       data: {

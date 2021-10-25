@@ -1,3 +1,5 @@
+//* chama serviço para retornar profile do usuário
+
 import { Request, Response } from "express";
 import { ProfileUserService } from "../services/ProfileUserService";
 class ProfileUserController {
